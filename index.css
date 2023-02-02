@@ -1,58 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat+Alternates&family=Nunito+Sans:wght@300;700&family=Poor+Story&family=Prompt:ital,wght@0,400;1,300&family=Saira+Extra+Condensed:wght@300&family=Stick+No+Bills:wght@300;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 :root {
-
-    --primary-color: #33b0ea;
+  --primary-color: #2e9bf3;
 }
 
 body {
-
-    font-family: 'Montserrat Alternates', sans-serif;
-    display: block;
-    margin: 0px;
-}
-
-.container {
-
-    margin: auto;
-    display: block;
-    text-align: center;
-    width: 40%;
-    padding: 1rem;
-
-}
-
-label{
-    font-weight: bold;
-}
-label,
-input {
-
-    width: 50%;
-    margin: auto;
-    display: block;
-    font-size: larger;
-    padding-top:1rem;
-}
-
-input {
-    border-radius: 5rem;
-    padding: 0.5rem;
-    border: 2px solid var(--primary-color);
-    margin-top: 1rem;
+  font-family: "Work Sans", sans-serif;
+  text-align: center;
 }
 
 
-button {
-    margin: 2.5rem;
-    padding: 1rem;
-    border: 5px solid var(blue);
-    border-radius:4.5rem;
-    background-color: var(--primary-color);
-    font-size: 1rem;
-    color: white;
+
+/* Header */
+header h1 {
+  text-align: center;
+  margin: 2rem;
 }
 
-#output {
-    margin: 1rem;
+.input-label {
+  display: block;
+  font-size: larger;
+  margin: 2rem 0px;
+  font-weight: 600;
 }
+
+.input {
+  font-size: large;
+  display: block;
+  outline: #fff;
+  padding: 0.6rem 1rem;
+  margin: 1rem auto;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 325px;
+}
+
+.btn-check {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-size: large;
+  cursor: pointer;
+  outline: #fff;
+  margin: auto;
+  display: block;
+}
+
+.output {
+  font-size: x-large;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+

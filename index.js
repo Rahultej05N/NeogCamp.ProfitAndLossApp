@@ -1,56 +1,41 @@
-const initialPrice = document.querySelector("#initial-price");
-const stockQuantity = document.querySelector("#stocks-quantity");
-const currentPrice = document.querySelector("#current-price");
-const output = document.querySelector("#output");
+var initialPrice = document.querySelector("#initial-price");
+var stocksQuantity = document.querySelector("#stocks-quantity");
+var currentPrice = document.querySelector("#current-price");
+var submitBtn = document.querySelector("#submit-btn");
+var outputBox = document.querySelector("#output-box");
 
-const calculateProfitLossBtn = document.querySelector("#calculate-profit-loss");
+// Ex-06
+submitBtn.addEventListener("click", submitHandler);
 
-function showMessage(message, flag = 0) {
-  // output.style.color = "black";
-  output.innerText = message;
+function submitHandler() {
+  var ip = Number(initialPrice.value);
+  var qty = Number(stocksQuantity.value);
+  var curr = Number(currentPrice.value);
 
-  if (flag !== 2) {
-    if (flag === 1) {
-      output.style.color = "green";
-    } else {
-      output.style.color = "red";
-    }
-  }
+  calculateProfitAndLoss(ip, qty, curr);
 }
 
-function calculateProfitLoss(initial, stocks, current) {
-  var flag = 0;
-  if (initial < current) {
-    const profit = (current - initial) * stocks;
-    const profitPercentage = (profit / initial) * 100;
-    flag++;
-    showMessage(
-      `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`,
-      flag
+// Ex-05
+function calculateProfitAndLoss(initial, quantity, current) {
+  if (initial > current) {
+    var loss = (initial - current) * quantity;
+    var lossPercentage = (loss / initial) * 100;
+
+    showOutput(
+      `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`
     );
-  } else if (initial > current) {
-    const loss = (initial - current) * stocks;
-    const lossPercentage = (loss / initial) * 100;
-    showMessage(
-      `Hey, the loss is ${loss} and the percent is ${lossPercentage}%`,
-      flag
+  } else if (current > initial) {
+    var profit = (current - initial) * quantity;
+    var profitPercentage = (profit / initial) * 100;
+
+    showOutput(
+      `Hey, the profit is ${profit} and the percent is ${profitPercentage}%`
     );
   } else {
-    flag = 2;
-    showMessage("no pain no gain and no gain, no pain!", flag);
+    showOutput(`No pain no gain and no gain no pain`);
   }
 }
 
-function clickEventHandler() {
-  const ip = Number(initialPrice.value);
-  const qnty = Number(stockQuantity.value);
-  const cur = Number(currentPrice.value);
-
-  if (ip > 0 && qnty > 0 && cur > 0) {
-    calculateProfitLoss(ip, qnty, cur);
-  } else {
-    showMessage("Invalid Input!");
-  }
+function showOutput(message) {
+  outputBox.innerHTML = message;
 }
-
-calculateProfitLossBtn.addEventListener("click", clickEventHandler);
