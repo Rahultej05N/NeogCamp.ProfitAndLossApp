@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat+Alternates&family=Nunito+Sans:wght@300;700&family=Poor+Story&family=Prompt:ital,wght@0,400;1,300&family=Saira+Extra+Condensed:wght@300&family=Stick+No+Bills:wght@300;600&display=swap');
+
+:root {
+
+    --primary-color: #33b0ea;
+}
+
+body {
+
+    font-family: 'Montserrat Alternates', sans-serif;
+    display: block;
+    margin: 0px;
+}
+
+.container {
+
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 40%;
+    padding: 1rem;
+
+}
+
+label{
+    font-weight: bold;
+}
+label,
+input {
+
+    width: 50%;
+    margin: auto;
+    display: block;
+    font-size: larger;
+    padding-top:1rem;
+}
+
+input {
+    border-radius: 5rem;
+    padding: 0.5rem;
+    border: 2px solid var(--primary-color);
+    margin-top: 1rem;
+}
+
+
+button {
+    margin: 2.5rem;
+    padding: 1rem;
+    border: 5px solid var(blue);
+    border-radius:4.5rem;
+    background-color: var(--primary-color);
+    font-size: 1rem;
+    color: white;
+}
+
+#output {
+    margin: 1rem;
+}
